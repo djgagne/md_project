@@ -12,7 +12,7 @@ class MD:
         self.wfos = wfos
         self.lats = lats
         self.lons = lons
-        self.header =  ["DiscID","IssueYear","IssueMonth","IssueDay","IssueDate","ValidStart","ValidEnd","Concerning","WatchLikely","Author","Summary","Discussion","WFOs","Lat","Lon"]
+        self.header =  ["DiscID","IssueYear","IssueMonth","IssueDay","IssueHour","IssueMinute","IssueDate","ValidStart","ValidEnd","Concerning","WatchLikely","Author","Summary","Discussion","WFOs","Lat","Lon"]
 
     def getWordFrequencies(self,attribute,numWords=1):
         """getWordFrequencies
@@ -41,6 +41,8 @@ class MD:
                    self.issue_date.strftime("%Y"),
                    self.issue_date.strftime("%m"),
                    self.issue_date.strftime("%d"),
+                   self.issue_date.strftime("%H"),
+                   self.issue_date.strftime("%M"),
                    self.issue_date.strftime(tfmt),
                    self.valid_start.strftime(tfmt),
                    self.valid_end.strftime(tfmt),
