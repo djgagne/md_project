@@ -108,7 +108,7 @@ def getMDMetadata(year,number):
     discussion_text = md_text[valid_re.end():author_re.start()].strip()
     discussion_list = discussion_text.split('\n   \n   ')
     summary = discussion_list[0].replace('\n   ',' ').replace(',','')
-    discussion = '  '.join(discussion_list[1:]).replace('\n   ',' ').replace(',','')
+    discussion = ' '.join(discussion_list[1:]).replace('\n   ',' ').replace(',','').replace('"',' in ')
     #print summary
     #print discussion
 
